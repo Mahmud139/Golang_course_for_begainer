@@ -25,6 +25,7 @@ func main(){
 	/*If the value is a struct, the %+v variant will include the struct’s field names.*/
 
 	// %#v verb
+	// for more understanding pleas look at the picture at class_5 folder
 	//fmt.Printf("my age is %#v\n",chinese)
 	/* The %#v variant prints a Go syntax representation of the value, 
 	i.e. the source code snippet that would produce that value. */

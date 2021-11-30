@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main(){
+	// slide no 24
+	floatSlice := make([]float64,10)
+	boolSlice := make([]bool, 10)
+	fmt.Println(floatSlice, boolSlice[5])
+
+	//var intSlice []int
+	// var stringSlice []string
+	// fmt.Println(intSlice, stringSlice)
+	// fmt.Printf("intSlice: %#v, stringSlice: %#v",intSlice, stringSlice)
+
+	//slide no 25
+	//intSlice[0] = 5
+	//fmt.Println(intSlice)
+	// fmt.Println(len(intSlice))
+
+	// intSlice = append(intSlice, 25)
+	// fmt.Printf("intSlice: %#v\n",intSlice)
+	// fmt.Println(len(intSlice), cap(intSlice))
+	//slide no 26
+	// var slice []string
+	// if len(slice) == 0 {
+	// 	slice = append(slice, "first item")
+	// }
+	// fmt.Printf("%#v\n",slice)
+}
