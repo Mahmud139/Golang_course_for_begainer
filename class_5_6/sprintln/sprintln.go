@@ -14,7 +14,7 @@ func main() {
 
 	//prove that new line is appended ...we can use the return value of println function
 	s:= fmt.Sprintln("shihab","uddin")
-	fmt.Println(s)
+	fmt.Print(s)
 	fmt.Println(len(s))
 
 	// It is conventional not to worry about any

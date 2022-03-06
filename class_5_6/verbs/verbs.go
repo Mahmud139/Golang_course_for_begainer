@@ -92,9 +92,5 @@ func main(){
 	// fmt.Printf("width4: |%6s|%6s|\n", "foo", "b")
 	// fmt.Printf("width5: |%-6s|%-6s|\n", "foo", "b")
 
-	/**/
-
-
-	/**/
 
 }
