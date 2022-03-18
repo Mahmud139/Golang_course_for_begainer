@@ -23,4 +23,12 @@ func main(){
 	fmt.Println(Gallons(1.2) == 1.2)
 	fmt.Println(Liters(1.2) > 0.2)
 
+	/*But defined types cannot be used in operations together with values of a
+	different type, even if the other type has the same underlying type. this is
+	to protect developers from accidentally mixing the two types.*/
+	// fmt.Println(Liters(1.2) + Gallons(12.2))
+	// fmt.Println(Gallons(12.34) == Liters(12.34))
+
+
+
 }
