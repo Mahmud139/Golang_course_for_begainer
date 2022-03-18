@@ -28,4 +28,11 @@ func main(){
 	different defined type to it, even if the other type has the same underlying type.
 	This helps protect developers from confusing the two types.*/
 
+
+	/*But you can convert between types that have the same underlying type. So
+	Liters can be converted to Gallons and vice versa, because both have an
+	underlying type of float64.*/
+	carFuel = Gallons(Liters(240.0))
+	busFuel = Liters(Gallons(10.0))
+
 }
