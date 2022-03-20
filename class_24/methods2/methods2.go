@@ -14,3 +14,6 @@ func main(){
 	anotherValue := MyType("another value")
 	anotherValue.sayHi()
 }
+
+/* Once a method is defined on a type, it can be called on any value of that type.
+Here, we create two different MyType values, and call sayHi on each of them.*/
