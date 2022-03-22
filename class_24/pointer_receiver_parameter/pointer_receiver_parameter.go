@@ -4,8 +4,12 @@ import "fmt"
 
 type Number int
 
-func (n Number) Double() {
-	n *= 2
+// func (n Number) Double() {
+// 	n *= 2
+// }
+
+func (n *Number) Double() {
+	*n *= 2
 }
 
 func main() {
