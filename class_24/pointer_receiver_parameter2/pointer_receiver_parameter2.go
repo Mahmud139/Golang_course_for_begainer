@@ -30,7 +30,8 @@ func main() {
 	can automatically convert values to pointers for you, but only if the receiver
 	value is stored in a variable. If you try to call a method on the value itself,
 	Go won’t be able to get a pointer, and you’ll get a similar error:*/
-	// MyType("a value").pointerMethod()
+	//MyType("a value").pointerMethod()
+	MyType("a value").valueMethod()//no problem for non pointer type receiver methods
 }
 
 /*Notice that we didn’t have to change the method call at all. When you call a
