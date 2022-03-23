@@ -20,6 +20,11 @@ func main() {
 
 	pointer.valueMethod() //Go will automatically get the value at the pointer for you
 	pointer.pointerMethod()
+
+	/*You can only get pointers to values that are stored in variables. If you try to
+	get the address of a value that’s not stored in a variable, you’ll get an error:*/
+	// &MyType("a value").valueMethod()
+	// &MyType("a value").pointerMethod()
 }
 
 /*Notice that we didn’t have to change the method call at all. When you call a
