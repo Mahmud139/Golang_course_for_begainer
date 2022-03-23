@@ -25,6 +25,12 @@ func main() {
 	get the address of a value that’s not stored in a variable, you’ll get an error:*/
 	// &MyType("a value").valueMethod()
 	// &MyType("a value").pointerMethod()
+
+	/*The same limitation applies when calling methods with pointer receivers. Go
+	can automatically convert values to pointers for you, but only if the receiver
+	value is stored in a variable. If you try to call a method on the value itself,
+	Go won’t be able to get a pointer, and you’ll get a similar error:*/
+	// MyType("a value").pointerMethod()
 }
 
 /*Notice that we didn’t have to change the method call at all. When you call a
