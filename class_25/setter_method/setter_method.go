@@ -8,7 +8,7 @@ type Date struct {
 	Day   int
 }
 
-func (d Date) SetYear(year int) {
+func (d *Date) SetYear(year int) {
 	d.Year = year
 }
 
