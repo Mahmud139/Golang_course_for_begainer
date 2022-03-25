@@ -21,6 +21,14 @@ func (d *Date) SetYear(year int) error {
 	return nil
 }
 
+func (d *Date) SetMonth(month int) error {
+	if month < 1 || month > 12 {
+		return errors.New("invalid month")
+	}
+	d.Month = month 
+	return nil
+}
+
 func main(){
 	date := Date{}
 	//err := date.SetYear(0)
@@ -29,4 +37,10 @@ func main(){
 		log.Fatal(err)
 	}
 	fmt.Println(date.Year)
+	//err = date.SetMonth(13)
+	err = date.SetMonth(6)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(date.Month)
 }
