@@ -29,6 +29,14 @@ func (d *Date) SetMonth(month int) error {
 	return nil
 }
 
+func (d *Date) SetDay(day int) error {
+	if day < 1 || day > 31 {
+		return errors.New("invalid day")
+	}
+	d.Day = day 
+	return nil
+}
+
 func main(){
 	date := Date{}
 	//err := date.SetYear(0)
@@ -43,4 +51,11 @@ func main(){
 		log.Fatal(err)
 	}
 	fmt.Println(date.Month)
+
+	//err = date.SetDay(63)
+	err = date.SetDay(6)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(date.Day)
 }
