@@ -1,7 +1,6 @@
 package calendar
 
 import "errors"
-
 type Date struct {
 	year int
 	month int
@@ -30,4 +29,16 @@ func (d *Date) SetDay(day int) error {
 	}
 	d.day = day 
 	return nil
+}
+
+func (d *Date) Year() int {
+	return d.year
+}
+
+func (d *Date) Month() int {
+	return d.month
+}
+
+func (d *Date) Day() int {
+	return d.day
 }
