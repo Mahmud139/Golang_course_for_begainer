@@ -8,4 +8,5 @@ import (
 func main(){
 	event := calendar.Event{}
 	event.month = 5
+	event.Date.year = 10
 }
