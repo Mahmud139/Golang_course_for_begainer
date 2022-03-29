@@ -12,6 +12,6 @@ func (e EmbeddedType) ExportedMethod() {
 	fmt.Println("Hi from ExportedMethod on EmbeddedType")
 }
 
-func (e EmbeddedType) unexportedmethod() {
+func (e EmbeddedType) unexportedMethod() {
 	fmt.Println("Hii from unexportedmethod on EmbeddedType")
 }
