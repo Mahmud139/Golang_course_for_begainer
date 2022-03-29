@@ -7,6 +7,8 @@ import (
 
 func main(){
 	event := calendar.Event{}
-	event.month = 5
-	event.Date.year = 10
+	fmt.Println(event.Year())
+	//unexported fields don't get promoted to outer struct type
+	// event.month = 5
+	// event.Date.year = 10
 }
