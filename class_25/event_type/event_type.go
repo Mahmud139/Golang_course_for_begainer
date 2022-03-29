@@ -26,5 +26,7 @@ func main(){
 	fmt.Println(event.Year())
 	fmt.Println(event.Month())
 	fmt.Println(event.Day())
-	
+	//Because the Event struct’s Title field is exported, we can still access it directly:
+	event.Title = "Mom's BirthDay"
+	fmt.Println(event.Title)
 }
