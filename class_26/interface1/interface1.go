@@ -12,7 +12,11 @@ func playList(device gadget.TapePlayer, songs []string) {
 }
 
 func main(){
-	player := gadget.TapePlayer{}
+	// player := gadget.TapePlayer{}
+	// mixtape := []string{"ami ami", "hello hello", "31 er dingolo"}
+	// playList(player, mixtape)
+
+	player := gadget.TapeRecorder{}
 	mixtape := []string{"ami ami", "hello hello", "31 er dingolo"}
 	playList(player, mixtape)
 }
