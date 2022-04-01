@@ -18,6 +18,10 @@ type NoiseMaker interface {
 	MakeSound()
 }
 
+func play(n NoiseMaker) {
+	n.MakeSound()
+}
+
 func main() {
 	var toy NoiseMaker
 	toy = Whistel("mahmud")
@@ -25,4 +29,7 @@ func main() {
 
 	toy = Horn("hasan")
 	toy.MakeSound()
+
+	play(Whistel("mahmud"))
+	play(Horn("hasan"))
 }
