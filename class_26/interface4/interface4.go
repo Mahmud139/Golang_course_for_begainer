@@ -30,7 +30,7 @@ type NoiseMaker interface {
 
 func play(n NoiseMaker) {
 	n.MakeSound() //ok, part of NoiseMaker Interface
-	n.Walk() //not ok, not part of NoiseMaker interface
+	//n.Walk() //not ok, not part of NoiseMaker interface
 }
 
 func main() {
