@@ -29,11 +29,13 @@ type NoiseMaker interface {
 }
 
 func play(n NoiseMaker) {
-	n.MakeSound()
-	n.Walk() 
+	n.MakeSound() //ok, part of NoiseMaker Interface
+	n.Walk() //not ok, not part of NoiseMaker interface
 }
 
 func main() {
-	play(Whistel("mahmud"))
-	play(Horn("hasan"))
+	// play(Whistel("mahmud"))
+	// play(Horn("hasan"))
+
+	play(Robot("Botoco Amber"))
 }
