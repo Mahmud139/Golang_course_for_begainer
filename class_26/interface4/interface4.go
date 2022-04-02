@@ -14,12 +14,23 @@ func (h Horn) MakeSound() {
 	fmt.Println("Honk!")
 }
 
+type Robot string 
+
+func (r Robot) MakeSound() {
+	fmt.Println("Beep Beep")
+}
+
+func (r Robot) Walk() {
+	fmt.Println("Powering Legs")
+}
+
 type NoiseMaker interface {
 	MakeSound()
 }
 
 func play(n NoiseMaker) {
 	n.MakeSound()
+	n.Walk() 
 }
 
 func main() {
