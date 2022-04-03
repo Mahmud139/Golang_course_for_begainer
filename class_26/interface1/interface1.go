@@ -11,7 +11,7 @@ type Player interface {
 	Stop()
 }
 
-func playList(device gadget.TapePlayer, songs []string) {
+func playList(device Player, songs []string) {
 	for _, song := range songs {
 		device.Play(song)
 	}
@@ -19,11 +19,13 @@ func playList(device gadget.TapePlayer, songs []string) {
 }
 
 func main(){
-	player := gadget.TapePlayer{}
+	var player Player
+	player = gadget.TapePlayer{}
 	mixtape := []string{"ami ami", "hello hello", "31 er dingolo"}
 	playList(player, mixtape)
 
-	// player := gadget.TapeRecorder{}
-	// mixtape := []string{"ami ami", "hello hello", "31 er dingolo"}
-	// playList(player, mixtape)
+	player = gadget.TapeRecorder{}
+	mixtape = []string{"ami ami", "hello hello", "31 er dingolo"}
+	playList(player, mixtape)
+
 }
