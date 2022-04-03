@@ -19,13 +19,11 @@ func playList(device Player, songs []string) {
 }
 
 func main(){
-	var player Player
-	player = gadget.TapePlayer{}
 	mixtape := []string{"ami ami", "hello hello", "31 er dingolo"}
+	var player Player = gadget.TapePlayer{}
 	playList(player, mixtape)
 
 	player = gadget.TapeRecorder{}
-	mixtape = []string{"ami ami", "hello hello", "31 er dingolo"}
 	playList(player, mixtape)
 
 }
