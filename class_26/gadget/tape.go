@@ -28,5 +28,5 @@ func (t TapeRecorder) Record() {
 
 func (t TapeRecorder) Stop() {
 	fmt.Println("Stopped!")
-}
+} 
 
