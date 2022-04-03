@@ -19,7 +19,8 @@ type Toggleable interface {
 
 func main() {
 	s := Switch("off")
-	var t Toggleable = s
+	// var t Toggleable = s
+	var t Toggleable = &s
 	t.toggle()
 	t.toggle()
 }
