@@ -16,5 +16,5 @@ func TryOut(player Player) {
 }
 
 func main(){
-
+	TryOut(gadget.TapeRecorder{})
 }
