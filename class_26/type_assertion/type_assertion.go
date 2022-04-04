@@ -12,7 +12,9 @@ type Player interface {
 func TryOut(player Player) {
 	player.Play("mahmud")
 	player.Stop()
-	recorder := gadget.TapeRecorder(player)
+	// recorder := gadget.TapeRecorder(player)
+	// recorder.Record()
+	var recorder gadget.TapeRecorder = player.(gadget.TapeRecorder)
 	recorder.Record()
 }
 
