@@ -19,4 +19,6 @@ type NoiseMaker interface {
 func main(){
 	var noisemaker NoiseMaker = Robot("hasan")
 	noisemaker.MakeSound()
+	var robot Robot = noisemaker.(Robot)
+	robot.Walk()
 }
