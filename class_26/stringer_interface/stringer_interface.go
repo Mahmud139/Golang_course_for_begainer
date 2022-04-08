@@ -22,4 +22,7 @@ func main(){
 
 	coffepot := Coffepot("Mahmud")
 	fmt.Println(coffepot.String())
+	fmt.Println(coffepot)
+	fmt.Print(coffepot, "\n")
+	fmt.Printf("%s \n",coffepot)
 }
