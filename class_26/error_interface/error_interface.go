@@ -5,11 +5,6 @@ import (
 	"log"
 )
 
-// type CommedyError string
-// func (c CommedyError) Error() string {
-// 	return string(c)
-// }
-
 type OverheatError float64
 func (o OverheatError) Error() string {
 	return fmt.Sprintf("Overheating by %0.2f degrees!", o)
@@ -26,10 +21,6 @@ func CheckTemperature(actual float64, safe float64) error {
 func main() {
 	// err := fmt.Errorf("a height of %0.2f is invalid", -2.333)
 	// fmt.Println(err.Error())
-	// fmt.Println(err)
-
-	// var err error 
-	// err = CommedyError("What's a programmer's favorite food?")
 	// fmt.Println(err)
 
 	var err error = CheckTemperature(121.45, 100.0)
