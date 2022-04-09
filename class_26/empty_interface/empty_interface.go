@@ -8,6 +8,12 @@ import "fmt"
 
 func AcceptAnything(thing interface{}) {
 	fmt.Println(thing)
+	//thing.MakeSound()
+}
+
+type Horn string
+func (h Horn) MakeSound() {
+	fmt.Println("Honk!")
 }
 
 func main(){
@@ -15,4 +21,5 @@ func main(){
 
 	AcceptAnything(321.12121)
 	AcceptAnything("Hasan")
+	AcceptAnything(Horn("Hasan"))
 }
