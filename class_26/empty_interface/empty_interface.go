@@ -13,12 +13,16 @@ func AcceptAnything(thing interface{}) {
 	if ok {
 		horn.MakeSound()
 	}
-	
 }
 
 type Horn string
 func (h Horn) MakeSound() {
 	fmt.Println("Honk!")
+}
+
+func AcceptHorn(horn Horn) {
+	fmt.Println(horn)
+	horn.MakeSound()
 }
 
 func main(){
