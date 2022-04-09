@@ -9,6 +9,11 @@ import "fmt"
 func AcceptAnything(thing interface{}) {
 	fmt.Println(thing)
 	//thing.MakeSound()
+	horn, ok := thing.(Horn)
+	if ok {
+		horn.MakeSound()
+	}
+	
 }
 
 type Horn string
