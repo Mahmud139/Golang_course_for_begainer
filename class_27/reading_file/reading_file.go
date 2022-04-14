@@ -40,7 +40,7 @@ func GetFloats(fileName string) ([]float64, error){
 }
 
 func main(){
-	numbers, err :=GetFloats(os.Args[1])
+	numbers, err := GetFloats(os.Args[1])
 	if err != nil {
 		log.Fatal(err)
 	}
