@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	files, err := ioutil.ReadDir("my_directory")
+	files, err := ioutil.ReadDir("M:/code_of_Golang/go_workspace/src/golang_tutorial/class_27/my_directory")
 	if err != nil {
 		log.Fatal(err)
 	}
