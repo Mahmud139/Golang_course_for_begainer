@@ -13,7 +13,8 @@ func scanDirectory(dirName string) {
 	}
 	for _, file := range files {
 		if file.IsDir() {
-			scanDirectory(file.Name()) //need to correction, because the system will not find the file/dir location
+			fmt.Printf("Opening %s\n",file.Name())
+			scanDirectory(dirName + "/" +file.Name()) //need to correction, because the system will not find the file/dir location
 		} else {
 			fmt.Println("File:",file.Name())
 		}
