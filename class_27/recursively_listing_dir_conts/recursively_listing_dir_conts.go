@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+)
+
+func scanDirectory(dirName string) {
+	files, err := ioutil.ReadDir(dirName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, file := range files {
+		if file.IsDir() {
+			scanDirectory(file.Name()) //need to correction, because the system will not find the file/dir location
+		} else {
+			fmt.Println("File:",file.Name())
+		}
+	}
+}
+
+func main() {
+	scanDirectory("M:/code_of_Golang/go_workspace/src/golang_tutorial/class_27/my_directory")
+}
