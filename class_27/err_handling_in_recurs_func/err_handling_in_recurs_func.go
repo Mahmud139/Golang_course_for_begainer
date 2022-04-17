@@ -11,7 +11,7 @@ func scanDirectory(path string) error {
 	fmt.Println(path)
 	files, err := ioutil.ReadDir(path)
 	if err != nil {
-		fmt.Printf("returning error from scandirectory (\"%s\") call\n", path)
+		fmt.Printf("returning error from scandirectory111 (\"%s\") call\n", path)
 		return err
 	}
 
@@ -36,3 +36,9 @@ func main() {
 		log.Fatal(err)
 	}
 }
+
+/*  If an error occurs in one of the recursive scanDirectory calls, that error has to
+	be returned up the entire chain until it reaches the main function!*/
+
+// recursive function call manei alada alada function call and protita function call er shathe ager function call er
+// kono relation nai.
