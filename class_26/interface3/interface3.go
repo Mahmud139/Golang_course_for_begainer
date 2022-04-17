@@ -24,6 +24,7 @@ func play(n NoiseMaker) {
 
 func main() {
 	var toy NoiseMaker = Whistel("mahmud")
+	//fmt.Printf("%T\n",toy)
 	toy.MakeSound()
 
 	toy = Horn("hasan")
