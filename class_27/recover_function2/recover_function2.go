@@ -14,5 +14,5 @@ func main(){
 
 func freckOut() {
 	panic("Oh no!")
-	recover()
+	//recover()
 }
