@@ -39,6 +39,6 @@ func scanDirectory(path string) {
 
 func main() {
 	defer reportPanic()
-	panic("some other issue")
+	//panic("some other issue")
 	scanDirectory("M:/code_of_Golang/go_workspace/src/my_directory")
 }
