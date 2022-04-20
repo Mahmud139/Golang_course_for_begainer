@@ -17,5 +17,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(len(body))
 	fmt.Println(string(body))
 }
