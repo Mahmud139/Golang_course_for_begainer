@@ -25,11 +25,11 @@ func responseSize(url string) int {
 
 func main() {
 	var size int
-	size = go responseSize("https://example.com")
+	//size = go responseSize("https://example.com")
 	fmt.Println(size)
-	size = go responseSize("https://golang.org/")
+	//size = go responseSize("https://golang.org/")
 	fmt.Println(size)
-	size = go responseSize("https://golang.org/doc")
+	//size = go responseSize("https://golang.org/doc")
 	fmt.Println(size)
 	time.Sleep(7*time.Second)
 }
