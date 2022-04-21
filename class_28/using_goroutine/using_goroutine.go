@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func a() {
 	for i := 0; i < 50; i++ {
@@ -15,7 +18,10 @@ func b() {
 }
 
 func main() {
-	a()
-	b()
+	// a()
+	// b()
+	go a()
+	go b()
+	time.Sleep(time.Second)
 	fmt.Println("End main()")
 }
