@@ -10,6 +10,8 @@ func main() {
 	go abc(myChannel1)
 	go def(myChannel2)
 	fmt.Println(<- myChannel1)
+	fmt.Println(<- myChannel1)
+	fmt.Println(<- myChannel1)
 	fmt.Println(<- myChannel2)
 }
 
