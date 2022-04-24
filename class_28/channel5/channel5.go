@@ -1,3 +1,4 @@
+//Synchronizing goroutines with channels
 package main
 
 import (
@@ -9,6 +10,7 @@ func main() {
 	myChannel2 := make(chan string)
 	go abc(myChannel1)
 	go def(myChannel2)
+	fmt.Println(<- myChannel1)
 	fmt.Println(<- myChannel1)
 	fmt.Println(<- myChannel1)
 	fmt.Println(<- myChannel1)
