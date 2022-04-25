@@ -24,20 +24,20 @@ func responseSize(url string, myChannel chan int) {
 
 func main() {
 	size := make(chan int)
-	// go responseSize("https://example.com", size)
-	// fmt.Println(<- size)
-	// go responseSize("https://golang.org/", size)
-	// fmt.Println(<- size)
-	// go responseSize("https://golang.org/doc", size)
-	// fmt.Println(<- size)
+	go responseSize("https://example.com", size)
+	fmt.Println(<- size)
+	go responseSize("https://golang.org/", size)
+	fmt.Println(<- size)
+	go responseSize("https://golang.org/doc", size)
+	fmt.Println(<- size)
 	// fmt.Println(<- size)
 	// fmt.Println(<- size)
 
-	urls := []string{"https://example.com","https://golang.org/","https://golang.org/doc"}
-	for _, url := range urls {
-		go responseSize(url, size)
-	}
-	for i := 0; i < len(urls); i++ {
-		fmt.Println(<-size)
-	} 
+	// urls := []string{"https://example.com","https://golang.org/","https://golang.org/doc"}
+	// for _, url := range urls {
+	// 	go responseSize(url, size)
+	// }
+	// for i := 0; i < len(urls); i++ {
+	// 	fmt.Println(<-size)
+	// } 
 }
