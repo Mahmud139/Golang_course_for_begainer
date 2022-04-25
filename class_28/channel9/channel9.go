@@ -23,13 +23,13 @@ func responseSize(url string, myChannel chan int) {
 }
 
 func main() {
-	myChannel := make(chan int)
-	go responseSize("https://example.com", myChannel)
-	fmt.Println(<- myChannel)
-	go responseSize("https://golang.org/", myChannel)
-	fmt.Println(<- myChannel)
-	go responseSize("https://golang.org/doc", myChannel)
-	fmt.Println(<- myChannel)
-	// fmt.Println(<- myChannel)
-	// fmt.Println(<- myChannel)
+	size := make(chan int)
+	go responseSize("https://example.com", size)
+	fmt.Println(<- size)
+	go responseSize("https://golang.org/", size)
+	fmt.Println(<- size)
+	go responseSize("https://golang.org/doc", size)
+	fmt.Println(<- size)
+	// fmt.Println(<- size)
+	// fmt.Println(<- size)
 }
