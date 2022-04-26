@@ -11,5 +11,5 @@ func main(){
 	phrases := []string{"my parents", "a rodeo clown"}
 	fmt.Println("a photo of", prose.JoinWithCommas(phrases))
 	phrases = []string{"my parents", "a rodeo clown", "prize bull"}
-	fmt.Println("my parents", prose.JoinWithCommas(phrases))
+	fmt.Println("a photo of", prose.JoinWithCommas(phrases))
 }
