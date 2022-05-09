@@ -58,7 +58,7 @@ func TestTwoElements(t *testing.T) {
 	}
 }
 
-func TestThreeElement(t *testing.T) {
+func TestThreeElements(t *testing.T) {
 	list := []string{"apple", "orange", "pear"}
 	want := "apple, orange, and pear"
 	got := JoinWithCommas(list)
