@@ -40,6 +40,15 @@ import (
 // 	}
 // }
 
+func TestOneElement(t *testing.T) {
+	list := []string{"apple"}
+	want := "apple"
+	got := JoinWithCommas(list)
+	if got != want {
+		t.Errorf(errorString(list, want, got))
+	}
+}
+
 func TestTwoElements(t *testing.T) {
 	list := []string{"apple", "orange"}
 	want := "apple and orange"
