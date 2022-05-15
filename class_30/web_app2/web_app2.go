@@ -1,3 +1,4 @@
+//Responding differently for different resource paths
 package main
 
 import (
