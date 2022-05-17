@@ -28,5 +28,6 @@ func main() {
 	// check(err)
 	// err = tmpl.Execute(os.Stdout, true)
 	// check(err)
-	
+	executeTemplate("Dot is: {{.}}!\n", "ABC")
+	executeTemplate("Dot is: {{.}}!\n", 123)
 }
