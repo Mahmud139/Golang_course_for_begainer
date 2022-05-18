@@ -26,6 +26,9 @@ func main() {
 
 	text2 := "Prices:\n{{range .}}${{.}}\n{{end}}"
 	executeTemplate(text2, []float64{12.12, 23.12, 45.12})
+
+	/*If the value provided to the {{range}} action is empty or nil, the loop won’t be run at all:*/
+	executeTemplate(text2, []float64{})
 }
 
 /*A section of a template between a {{range}} action and its 
