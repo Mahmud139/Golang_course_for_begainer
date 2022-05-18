@@ -14,6 +14,12 @@ import (
 // 	_, err := writer.Write(placeholder)
 // 	check(err)
 // }
+
+type GuestBook struct {
+	SignatureCount int
+	Signatures []string
+}
+
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	signatures := getStrings("signatures.txt")
 	fmt.Printf("%#v\n",signatures)
