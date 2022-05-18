@@ -25,7 +25,7 @@ type Subscriber struct{
 }
 
 func main() {
-	text := "Name: {{.Name}}\n{{if .Active}}Rate: ${{.Rate}}\n{{end}}\n"
+	text := "Name: {{.Name}}\n{{if .Active}}Rate: ${{.Rate}}\n{{end}}"
 	subscriber := Subscriber{Name: "Mahmud", Rate: 5.99, Active: true}
 	executeTemplate(text, subscriber)
 	subscriber = Subscriber{Name: "Mahmud", Rate: 5.99, Active: false}
