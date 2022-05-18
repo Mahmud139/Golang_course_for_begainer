@@ -21,7 +21,11 @@ func executeTemplate(text string, data interface{}) {
 }
 
 func main() {
-	text := ""
+	text := "Before loop: {{.}}\n{{range .}}In loop: {{.}}\n{{end}}After loop: {{.}}\n"
+	executeTemplate(text, []string{"Md", "Mahmudul", "Hasan"})
+
+	text2 := "Prices:\n{{range .}}${{.}}\n{{end}}"
+	executeTemplate(text2, []float64{12.12, 23.12, 45.12})
 }
 
 /*A section of a template between a {{range}} action and its 
