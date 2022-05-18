@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bufio"
+	"html/template"
 	"log"
 	"net/http"
-	"html/template"
+	"os"
 )
 
 // func viewHandler(writer http.ResponseWriter, request *http.Request) {
@@ -16,6 +18,22 @@ func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	check(err)
 	err = html.Execute(writer, nil)
 	check(err)
+}
+
+func getStrings(fileName string) []string {
+	var lines []string
+	file, err := os.Open(fileName)
+	if os.IsNotExist(err) {
+		return nil
+	}
+	check(err)
+	defer file.Close()
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	check(scanner.Err())
+	return lines
 }
 
 func check(err error) {
