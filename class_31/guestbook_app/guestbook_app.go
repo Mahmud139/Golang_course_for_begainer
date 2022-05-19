@@ -43,6 +43,8 @@ func newHandler(writer http.ResponseWriter, request *http.Request) {
 func createHandle(writer http.ResponseWriter, request *http.Request) {
 	signature := request.FormValue("signature")
 	fmt.Println(signature)
+	_, err := writer.Write([]byte(signature))
+	check(err)
 }
 
 func getStrings(fileName string) []string {
