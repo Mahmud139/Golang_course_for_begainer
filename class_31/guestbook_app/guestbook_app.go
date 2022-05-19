@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	// "fmt"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -40,6 +40,11 @@ func newHandler(writer http.ResponseWriter, request *http.Request) {
 	check(err)
 }
 
+func createHandle(writer http.ResponseWriter, request *http.Request) {
+	signature := request.FormValue("signature")
+	fmt.Println(signature)
+}
+
 func getStrings(fileName string) []string {
 	var lines []string
 	file, err := os.Open(fileName)
@@ -65,6 +70,7 @@ func check(err error) {
 func main() {
 	http.HandleFunc("/guestbook", viewHandler)
 	http.HandleFunc("/guestbook/new", newHandler)
+	http.HandleFunc("/guestbook/create", createHandle)
 	err := http.ListenAndServe("localhost:8080", nil)
 	check(err)
 }
