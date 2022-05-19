@@ -49,6 +49,7 @@ func createHandle(writer http.ResponseWriter, request *http.Request) {
 	check(err)
 	err = file.Close()
 	check(err)
+	http.Redirect(writer, request, "/guestbook", http.StatusFound)
 	// fmt.Println(signature)
 	// _, err := writer.Write([]byte(signature))
 	// check(err)
