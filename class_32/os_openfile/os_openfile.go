@@ -30,10 +30,18 @@ func main() {
 	// err = file.Close()
 	// check(err)
 
-	options := os.O_WRONLY | os.O_APPEND
-	file, err := os.OpenFile("tests.txt", options, os.FileMode(0600))
+	// options := os.O_WRONLY | os.O_APPEND
+	// file, err := os.OpenFile("tests.txt", options, os.FileMode(0600))
+	// check(err)
+	// _, err = file.Write([]byte("IS My name\n"))
+	// check(err)
+	// err = file.Close()
+	// check(err)
+
+	options := os.O_WRONLY | os.O_APPEND | os.O_CREATE
+	file, err := os.OpenFile("tests2.txt", options, os.FileMode(0600))
 	check(err)
-	_, err = file.Write([]byte("IS My name\n"))
+	_, err = file.Write([]byte("Mahmud is My name\n"))
 	check(err)
 	err = file.Close()
 	check(err)
