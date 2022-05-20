@@ -16,6 +16,7 @@ func check(err error) {
 func main() {
 	file, err := os.OpenFile("tests.txt", os.O_RDONLY, os.FileMode(0600))
 	check(err)
+	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
