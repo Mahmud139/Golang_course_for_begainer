@@ -23,9 +23,17 @@ func main() {
 	// }
 	// check(scanner.Err())
 
-	file, err := os.OpenFile("tests.txt", os.O_WRONLY, os.FileMode(0600))
+	// file, err := os.OpenFile("tests.txt", os.O_WRONLY, os.FileMode(0600))
+	// check(err)
+	// _, err = file.Write([]byte("Mahmud\n"))
+	// check(err)
+	// err = file.Close()
+	// check(err)
+
+	options := os.O_WRONLY | os.O_APPEND
+	file, err := os.OpenFile("tests.txt", options, os.FileMode(0600))
 	check(err)
-	_, err = file.Write([]byte("Mahmud\n"))
+	_, err = file.Write([]byte("IS My name"))
 	check(err)
 	err = file.Close()
 	check(err)
