@@ -33,7 +33,7 @@ func main() {
 	options := os.O_WRONLY | os.O_APPEND
 	file, err := os.OpenFile("tests.txt", options, os.FileMode(0600))
 	check(err)
-	_, err = file.Write([]byte("IS My name"))
+	_, err = file.Write([]byte("IS My name\n"))
 	check(err)
 	err = file.Close()
 	check(err)
