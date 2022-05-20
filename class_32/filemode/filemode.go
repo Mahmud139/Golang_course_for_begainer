@@ -2,14 +2,22 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
 func main() {
-	fmt.Println(os.FileMode(0700))
-	fmt.Println(os.FileMode(0070))
-	fmt.Println(os.FileMode(0007))
-	fmt.Println(os.FileMode(0707))
+	// fmt.Println(os.FileMode(0700))
+	// fmt.Println(os.FileMode(0070))
+	// fmt.Println(os.FileMode(0007))
+	// fmt.Println(os.FileMode(0707))
+
+	fileInfo, err := os.Stat("M:/code_of_Golang/go_workspace/src/golang_tutorial/class_32/os_openfile")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(fileInfo.IsDir())
+	fmt.Println(fileInfo.Mode())
 }
 
 /*Each file has three sets of permissions, affecting three different classes of users.
