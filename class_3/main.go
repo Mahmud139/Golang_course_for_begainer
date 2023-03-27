@@ -58,6 +58,8 @@ func main(){
 	name, num := "shihab", 12
 	fmt.Println(name, num)
 	fmt.Println(len(name))
+	name = "马姆"
+	fmt.Println(len(name))
 	/* here we use len function to know the length of a name string. we know that if we want
 	to use a function first we need to import the specific package. here we didn't do that.
 	because In go, golang provides some predeclared identifiers. len function is one of them. 
