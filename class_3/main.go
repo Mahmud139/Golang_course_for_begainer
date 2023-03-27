@@ -71,6 +71,7 @@ func main(){
 	//x = 12
 	fmt.Println(x)
 
+	// String Concatenation
 	// name:= "shihab "
 	// name2:= "uddin"
 	// res:= name + name2
