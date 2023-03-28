@@ -69,7 +69,8 @@ func main(){
 	const x int = 12
 	fmt.Println(x)
 	// x = 13 // you cann't modify const variable once they have been declared.
-	const y = 14 //untyped const variable, because we didn't specif the type of this variable
+	const y = 14 //untyped const variable, because we didn't specify the type of this variable
+	/* This can be useful when working with numbers such as integer-type data. If the constant is untyped, it is explicitly converted, where typed constants are not. */
 	fmt.Println(y)
 
 	// String Concatenation
