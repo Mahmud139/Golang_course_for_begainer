@@ -66,10 +66,11 @@ func main(){
 	these predecleared identifiers are documented in builtin package: only for documentation
 	purpose. that's why we don't need to import it. Is imported by default. */ 
 
-	const x = 12
+	const x int = 12
 	fmt.Println(x)
-	//x = 12
-	fmt.Println(x)
+	// x = 13 // you cann't modify const variable once they have been declared.
+	const y = 14 //untyped const variable, because we didn't specif the type of this variable
+	fmt.Println(y)
 
 	// String Concatenation
 	// name:= "shihab "
