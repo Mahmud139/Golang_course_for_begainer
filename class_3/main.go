@@ -60,7 +60,7 @@ func main(){
 	fmt.Println(len(name))
 	name = "马姆"
 	fmt.Println(len(name))
-	/* here we use len function to know the length of a name string. we know that if we want
+	/* here we use len function to count the "name" string.English characters needs 1 byte to store in memory. UTF8 charactes need 1-4 bytes. we know that if we want
 	to use a function first we need to import the specific package. here we didn't do that.
 	because In go, golang provides some predeclared identifiers. len function is one of them. 
 	these predecleared identifiers are documented in builtin package: only for documentation
