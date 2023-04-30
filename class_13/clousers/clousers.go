@@ -9,15 +9,15 @@ func main() {
     
     modulus(2)
     modulus(-5)
-	// test()
-	// test()
+	test()
+	test()
 }
 
 func getModulus() func( int) int {
     count := 0
     return func(x int) int {
         count = count + 1
-        //fmt.Printf("modulus function called %d times\n", count)
+        fmt.Printf("modulus function called %d times\n", count)
         if x < 0 {
             x = x * -1
         }
@@ -26,8 +26,9 @@ func getModulus() func( int) int {
 	
 }
 
-// func test () {
-// 	c := 0
-// 	c = c + 1
-// 	fmt.Println("count ", c)
-// }
+//This function don't retain the current value between different function call
+func test () {
+	c := 0
+	c = c + 1
+	fmt.Println("count ", c)
+}
