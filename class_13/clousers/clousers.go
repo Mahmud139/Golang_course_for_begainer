@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	//var name string
     modulus := getModulus()
 	fmt.Println(modulus(-1))
+    fmt.Println(modulus(2))
+    fmt.Println(modulus(-5))
+
     
-    modulus(2)
-    modulus(-5)
 	test()
 	test()
 }
@@ -23,7 +23,6 @@ func getModulus() func( int) int {
         }
         return x
     }
-	
 }
 
 //This function don't retain the current value between different function call
