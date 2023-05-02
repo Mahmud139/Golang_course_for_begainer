@@ -23,3 +23,9 @@ func init(){
 func main(){
 	fmt.Println("init counter:", initCounter)
 }
+
+//it doesn't matter the writing position of init(), it will always run before main()
+func init(){
+	fmt.Println("Printed from 4th init() function.")
+	initCounter++
+}
