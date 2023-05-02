@@ -21,10 +21,9 @@ func main(){
 	fmt.Println(secondTime())
 	fmt.Println(secondTime())
 	
-	// fmt.Println(add())
-	// fmt.Println(add())
-	// fmt.Println(add())
-
+	fmt.Println(add())
+	fmt.Println(add())
+	fmt.Println(add())
 }
 
 func evenGenerator() func() uint {
@@ -36,8 +35,8 @@ func evenGenerator() func() uint {
 }
 
 // var i int = 0
-// func add() int {
-// 	// i := 0
-// 	i = i + 1
-// 	return i
-// }
+func add() int {//normal function don't retain current value between different function call
+	i := 0
+	i = i + 1
+	return i
+}
