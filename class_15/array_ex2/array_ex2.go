@@ -21,12 +21,10 @@ func itemExits (arrayType [3]string, item string) bool {
 		// return false 
 	}
 
-	for i:= 0; i< arr.Len(); i++ {
+	for i := 0; i < arr.Len(); i++ {
 		if arr.Index(i).String() == item {
 			return true
 		}
 	}
 	return false
-
-
 }
