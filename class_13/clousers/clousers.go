@@ -8,14 +8,13 @@ func main() {
     fmt.Println(modulus(2))
     fmt.Println(modulus(-5))
 
-    
 	test()
 	test()
 }
 
 func getModulus() func( int) int {
     count := 0
-    return func(x int) int {
+    return func(x int) int { //this function retain the current value between different function call
         count = count + 1
         fmt.Printf("modulus function called %d times\n", count)
         if x < 0 {
