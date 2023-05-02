@@ -19,7 +19,11 @@ func main(){
 		fmt.Println(notes)
 	}
 
-	// var primes [3]int = [3]int{3, 5, 7}
+	//we can ignore the value part: and we can write it in two way
+	var primes [3]int = [3]int{3, 5, 7}
+	for index := range primes{ //this way of writing only valid when we ignore the value part
+		fmt.Println(index)
+	}
 	// for index, _ := range primes{
 	// 	fmt.Println(index)
 	// }
