@@ -1,14 +1,13 @@
-//simple closure function. 
 package main
 
 import "fmt"
 
 func main(){
-	//var name string = "shihab"
-	// add := func(a, b int) int {
-	// 	return a + b
-	// }
-	// fmt.Println(add(12,12))
+	//simple closure function.
+	add := func(a, b int) int {
+		return a + b
+	}
+	fmt.Println(add(12,12))
 
 	/*When you create a local function like this it also
 	has access to other local variables.*/
