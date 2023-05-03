@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main(){
-	//slide no 22
+	//slide no 21
 	slice := []string{"a", "b"}
 	fmt.Println(slice, len(slice))
 	slice = append(slice, "c")
