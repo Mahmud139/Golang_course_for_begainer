@@ -1,8 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main(){
+	var MyArray [3]string
+	var MySlice []string
+	fmt.Println(reflect.TypeOf(MyArray).Kind())
+	fmt.Println(reflect.TypeOf(MySlice).Kind())
+	
+	
 	//var n []int
 	// n := make([]int, 2, 4)
 	// n = []int{1,2}
@@ -40,14 +49,14 @@ func main(){
 	// fmt.Print(s)
 
 	//num := make([]int, 4)
-	num := []int{}
-	fmt.Println(len(num))
-	fmt.Println(cap(num))
-	for i := 0; i < 4; i++ {
-		//num[i] = i
-		num = append(num, i) // can we use this statement instead of using above statement?
-	}
-	fmt.Println(len(num))
-	fmt.Println(cap(num))
-	fmt.Println(num)
+	// num := []int{}
+	// fmt.Println(len(num))
+	// fmt.Println(cap(num))
+	// for i := 0; i < 4; i++ {
+	// 	//num[i] = i
+	// 	num = append(num, i) // can we use this statement instead of using above statement?
+	// }
+	// fmt.Println(len(num))
+	// fmt.Println(cap(num))
+	// fmt.Println(num)
 }
