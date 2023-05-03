@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main(){
-	// slide no 15
+	// slide no 16
 	array1 := [5]string{"a", "b", "c", "d", "e"}
 	slice1 := array1[0:3]
 	fmt.Println(slice1)
@@ -12,7 +12,7 @@ func main(){
 	slice2 := array2[2:5]
 	fmt.Println(slice2)
 
-	// slide no 16
+	// slide no 17
 	array3 := [5]string{"a", "b", "c", "d", "e"}
 	slice3 := array3[0:3]
 	slice4 := array3[2:5]
