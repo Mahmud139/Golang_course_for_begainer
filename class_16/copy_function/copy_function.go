@@ -12,9 +12,8 @@ func main(){
     fmt.Printf("src: %v\n", src)
 
     //After changing numbers2
-    // dst[0] = 10
-    // fmt.Println("\nAfter changing dst")
-    // fmt.Printf("dst: %v\n", dst)
-    // fmt.Printf("src: %v\n", src)
-
+    dst[0] = 10
+    fmt.Println("\nAfter changing dst")
+    fmt.Printf("dst: %v\n", dst)
+    fmt.Printf("src: %v\n", src)
 }
