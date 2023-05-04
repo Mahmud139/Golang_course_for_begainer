@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main(){
-	//slide no 29
+	//slide no 30
 	// mySlice := []int{1,2,3,4,5,6}
 	// fmt.Println(mySlice, len(mySlice))
 	//now we want to remove the 3rd element of mySlice, the index number of 3rd element is 2.
@@ -11,7 +11,7 @@ func main(){
 	// fmt.Println(mySlice, len(mySlice)) //now the 3rd element is no longer in our mySlice 
 
 
-	//slide no 30
+	//slide no 31
 	//delete a range with the same approach
 	// mySlice := []int{1,2,3,4,5,6}
 	// fmt.Println(mySlice, len(mySlice))
