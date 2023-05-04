@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func main(){
-	//slide no 36
+	//slide no 37
 	twoDSlice1 := make([][]int, 2)
 	for i := range twoDSlice1 {
 		twoDSlice1[i] = make([]int, 3)
 	}
 	// twoDSlice1[0] = make([]int, 3)
 	// twoDSlice1[1] = make([]int, 3)
-	// twoDSlice1[0] = []int{1, 2, 3}
-	// twoDSlice1[1] = []int{4, 5, 6}
+	twoDSlice1[0] = []int{1, 2, 3}
+	twoDSlice1[1] = []int{4, 5, 6}
 
 	fmt.Printf("Number of rows in slice: %d\n", len(twoDSlice1))
     fmt.Printf("Number of columns in slice: %d\n", len(twoDSlice1[0]))
@@ -21,7 +21,7 @@ func main(){
 
 
 
-	//slide no 37
+	//slide no 38
 	// twoDSlice := make([][]int, 2)
     // twoDSlice[0] = []int{1, 2, 3}
     // twoDSlice[1] = []int{4, 5}
