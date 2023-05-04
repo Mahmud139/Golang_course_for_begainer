@@ -6,7 +6,7 @@ import (
 )
 
 func main(){
-	//slide no 27
+	//slide no 28
 	//create an array
 	myArray := [5]int{1,2,3,4,5}
 	//fmt.Println(reflect.TypeOf(myArray).Kind())
