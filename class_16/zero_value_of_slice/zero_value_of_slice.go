@@ -10,9 +10,10 @@ func main(){
 
 	var intSlice []int
 	var stringSlice []string
-	emptySlice := []int{} //initialized an empty slice with slice literal
+	var emptySlice []int = []int{} //empty slice
+	emptySlice2 := []int{} //initialized an empty slice with slice literal
 	fmt.Println(intSlice, stringSlice, emptySlice)
-	fmt.Printf("intSlice: %#v, stringSlice: %#v, emptySlice: %#v",intSlice, stringSlice, emptySlice)
+	fmt.Printf("intSlice: %#v, stringSlice: %#v, emptySlice: %#v, emptySlice2: %#v\n",intSlice, stringSlice, emptySlice, emptySlice2)
 
 	//slide no 26
 	//intSlice[0] = 5

@@ -4,12 +4,12 @@ import "fmt"
 
 func main(){
 	//slide no 5
-	// var myArray [3]int
-	// var mySlice []int
+	var myArray [3]int
+	var mySlice []int //nill slice
 
 	//slide no 6
-	// fmt.Println(myArray)
-	// fmt.Println(mySlice)
+	fmt.Println(myArray)
+	fmt.Println(mySlice)
 
 	// var notes []string
 	// fmt.Println(notes)
@@ -24,8 +24,8 @@ func main(){
 	// fmt.Println(notes)
 
 	//slide no 7
-	primes := make([]int, 5)
-	primes[0] = 1
-	primes[1] = 3
-	fmt.Println(primes)	
+	// primes := make([]int, 5)
+	// primes[0] = 1
+	// primes[1] = 3
+	// fmt.Println(primes)	
 }
