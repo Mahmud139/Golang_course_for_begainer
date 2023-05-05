@@ -34,4 +34,19 @@ func main(){
 	pre-allocated during the initialization.  This is a performance boost as 
 	if more elements are needed to include in this array then space is already 
 	allocated for them. */
+
+
+	//IMPORTANT NOTE: don't use cap() for conditional part of loop
+	n := make([]int, 4)
+	fmt.Println(n)
+	fmt.Println(cap(n))
+	fmt.Println(len(n))
+	for i := 0; i < cap(n); i++ { //don't use cap() here with inside append()
+		//n[i] = i 
+		n = append(n, i)
+		/*the above statement is not valid here, because "i < cap(n)" this condition is unreachable with the above statement. every time this statement run, capacity of n is also increasing. every time when this statement run, program try to allocate more memory. at the end we got "running out of memory" error.*/
+	} 
+	fmt.Println(n)
+	fmt.Println(cap(n))
+	fmt.Println(len(n))
 }
