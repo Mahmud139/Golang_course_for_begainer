@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main(){
-	//slide no 4
+	//slide no 5
 	// var myArray [3]int
 	// var mySlice []int
 
-	//slide no 5
+	//slide no 6
 	// fmt.Println(myArray)
 	// fmt.Println(mySlice)
 
@@ -23,7 +23,7 @@ func main(){
 	// fmt.Println(notes[1])
 	// fmt.Println(notes)
 
-	//slide no 6
+	//slide no 7
 	primes := make([]int, 5)
 	primes[0] = 1
 	primes[1] = 3
