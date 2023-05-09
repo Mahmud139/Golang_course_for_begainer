@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main(){
-	//slide no 19
+	//slide no 22
 	var ok bool 
 	ranks := make(map[string]int)
 	var rank int

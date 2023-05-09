@@ -24,6 +24,7 @@ func main() {
 	// order["a"] = 1
 	// order["c"] = 3
 	// fmt.Println(order)
+	// fmt.Printf("%#v\n", order)
 
 	// order2 := make(map[int]int)
 	// order2[2] = 2

@@ -11,7 +11,7 @@ func main(){
 		"Kate": 50,
 	}
 	fmt.Println(employee)
-	//Method - I
+	//Method - 1
 	for k := range employee {
 		delete(employee, k)
 	}
