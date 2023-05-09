@@ -18,4 +18,5 @@ func main(){
 
 	emptyMap := map[string]string{}
 	fmt.Println(emptyMap)
+	fmt.Printf("%#v", emptyMap)
 }
