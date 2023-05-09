@@ -4,22 +4,20 @@ package main
 import "fmt"
 
 func main(){
-	//slide no 15
+	//slide no 18
 	// status("hasan")
 	// status("iren")
 
-	//slide no 16
+	//slide no 19
 	// counters := map[string]int{"a": 3, "b": 0}
-	// var value int
-	// var ok bool
-	// value, ok = counters["a"]
+	// value, ok := counters["a"]
 	// fmt.Println(value, ok)
 	// value, ok = counters["b"]
 	// fmt.Println(value, ok)
 	// value, ok = counters["c"]
 	// fmt.Println(value, ok)
 
-	//slide no 17
+	//slide no 20
 	// counters := map[string]int{"a": 3, "b": 0}
 	// var ok bool
 	// _, ok = counters["b"]
@@ -27,7 +25,7 @@ func main(){
 	// _, ok = counters["c"]
 	// fmt.Println(ok)
 
-	//slide no 15
+	//slide no 18
 	status("hasan")
 	status("iren")
 }
