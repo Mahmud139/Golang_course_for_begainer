@@ -12,4 +12,8 @@ func main() {
 	fmt.Println(reflect.TypeOf(&myFloat))
 	var myBool bool 
 	fmt.Println(reflect.TypeOf(&myBool))
+
+	var pointer *int
+	fmt.Println(reflect.TypeOf(pointer))
+	fmt.Println(reflect.TypeOf(pointer).Kind())
 }
