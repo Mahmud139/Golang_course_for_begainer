@@ -8,8 +8,11 @@ import (
 func main() {
 	var myInt int
 	fmt.Println(reflect.TypeOf(&myInt))
+	fmt.Println(reflect.TypeOf(&myInt).Kind())
+
 	var myFloat float64
 	fmt.Println(reflect.TypeOf(&myFloat))
+	
 	var myBool bool 
 	fmt.Println(reflect.TypeOf(&myBool))
 
