@@ -11,7 +11,7 @@ func main(){
 	fmt.Println(*myIntPointer) //this print the value of myInt variable using the address.
 
 	var myBool bool 
-	var myBoolPointer *bool 
-	myBoolPointer = &myBool
+	// var myBoolPointer *bool 
+	myBoolPointer := &myBool //short-hand declaration
 	fmt.Println(myBoolPointer)
 }
