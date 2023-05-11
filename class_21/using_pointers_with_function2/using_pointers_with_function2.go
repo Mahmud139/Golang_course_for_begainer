@@ -3,10 +3,13 @@ package main
 import "fmt"
 
 func main(){
-	var myBool bool = true 
+	var myBool bool = true
+	fmt.Println("before calling printPointer(): ", myBool) 
 	printPointer(&myBool)
+	fmt.Println("after calling printPointer(): ", myBool)
 }
 
 func printPointer(myBoolPointer *bool) {
-	fmt.Println(*myBoolPointer)
+	*myBoolPointer = false
+	fmt.Println("inside printPointer(): ",*myBoolPointer)
 }
