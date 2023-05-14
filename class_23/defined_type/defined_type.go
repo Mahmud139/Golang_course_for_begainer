@@ -19,6 +19,5 @@ func main(){
 	subcriber2.name = "Hasan"
 	fmt.Println(subcriber2.name)
 
-	/* Declaring struct variable is really tedious for us. we have ro repeat entire struct type
-	declaration for each new variable. */
+	/* Declaring struct variable is really tedious for us. we have ro repeat entire struct type declaration for each new variable. */
 }
