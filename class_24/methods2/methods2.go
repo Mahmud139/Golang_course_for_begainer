@@ -5,7 +5,7 @@ import "fmt"
 type MyType string
 
 func (m MyType) sayHi() {
-	fmt.Println("Hi")
+	fmt.Println("Hi from ", m)
 }
 
 func main(){
