@@ -18,6 +18,7 @@ func (n *Number) Double() {
 func main() {
 	number := Number(12) //variable with a nonpointer type
 	fmt.Println("Original value of number:", number)
+	//(&number).Double()
 	number.Double() //Go will automatically convert the receiver to a pointer for you
 	fmt.Println("number after calling double:", number)
 }
