@@ -12,6 +12,10 @@ func (s shihabError) Error() string {
 	return string(s)
 }
 
+// type error interface {
+//     Error() string
+// }
+
 func main() {
 	var err error = testError("what's your name?")
 	fmt.Println(err.Error())
