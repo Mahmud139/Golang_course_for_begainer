@@ -34,19 +34,7 @@ func (t TapeRecorder) Record() {
 
 
 
-// func Playlist(device TapePlayer, songs []string) {
-//     for _, song := range songs {
-//         device.Play(song)
-//     }
-//     device.Stop()
-// }
-
-type Player interface {
-    Play(string)
-    Stop()
-}
-
-func Playlist(device Player, songs []string) {
+func Playlist(device TapePlayer, songs []string) {
     for _, song := range songs {
         device.Play(song)
     }
@@ -54,24 +42,13 @@ func Playlist(device Player, songs []string) {
 }
 
 
-func main() {
-    // player := TapePlayer{}
-    // songs := []string{"a", "b", "c"}
-    // Playlist(player, songs)
 
+func main() {
+    player := TapePlayer{}
+    songs := []string{"a", "b", "c"}
+    Playlist(player, songs)
 
     // recorder := TapeRecorder{}
     // Playlist(recorder, songs)
-
-    
-    songs := []string{"a", "b", "c"}
-    var tapePlayer Player = TapePlayer{}
-    Playlist(tapePlayer, songs)
-
-    var tapeRecorder Player 
-    tapeRecorder = TapeRecorder{}
-    Playlist(tapeRecorder, songs)
-    a := tapeRecorder.(TapeRecorder)
-    a.Record()
 }
 
