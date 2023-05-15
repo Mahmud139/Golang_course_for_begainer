@@ -21,4 +21,5 @@ func main(){
 	noisemaker.MakeSound()
 	var robot Robot = noisemaker.(Robot)
 	robot.Walk()
+	// noisemaker.(Robot).Walk()
 }
