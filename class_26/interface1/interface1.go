@@ -1,28 +1,77 @@
 package main
 
-import (
-	"golang_tutorial/class_26/gadget"
-)
+import "fmt"
 
-//fixing our playlist function with an interface
+type TapePlayer struct {
+    batteries string 
+}
+
+func (t TapePlayer) Play(song string) {
+    fmt.Println("Playing Using TapePlayer", song)
+}
+
+func (t TapePlayer) Stop() {
+    fmt.Println("Stopped the TapePlayer")
+}
+
+
+
+type TapeRecorder struct {
+    microphone int
+}
+
+func (t TapeRecorder) Play(song string) {
+    fmt.Println("Playing using TapeRecorder", song)
+}
+
+func (t TapeRecorder) Stop() {
+    fmt.Println("Stopped From TapeRecorder")
+}
+
+func (t TapeRecorder) Record() {
+    fmt.Println("Recording")
+}
+
+
+
+// func Playlist(device TapePlayer, songs []string) {
+//     for _, song := range songs {
+//         device.Play(song)
+//     }
+//     device.Stop()
+// }
 
 type Player interface {
-	Play(string)
-	Stop()
+    Play(string)
+    Stop()
 }
 
-func playList(device Player, songs []string) {
-	for _, song := range songs {
-		device.Play(song)
-	}
-	device.Stop()
+func Playlist(device Player, songs []string) {
+    for _, song := range songs {
+        device.Play(song)
+    }
+    device.Stop()
 }
 
-func main(){
-	mixtape := []string{"ami ami", "hello hello", "31 er dingolo"}
-	var player Player = gadget.TapePlayer{}
-	playList(player, mixtape)
 
-	player = gadget.TapeRecorder{}
-	playList(player, mixtape)
+func main() {
+    // player := TapePlayer{}
+    // songs := []string{"a", "b", "c"}
+    // Playlist(player, songs)
+
+
+    // recorder := TapeRecorder{}
+    // Playlist(recorder, songs)
+
+    
+    songs := []string{"a", "b", "c"}
+    var tapePlayer Player = TapePlayer{}
+    Playlist(tapePlayer, songs)
+
+    var tapeRecorder Player 
+    tapeRecorder = TapeRecorder{}
+    Playlist(tapeRecorder, songs)
+    a := tapeRecorder.(TapeRecorder)
+    a.Record()
 }
+
