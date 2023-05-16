@@ -41,7 +41,8 @@ func GetFloats(fileName string) ([]float64, error){
 }
 
 func main(){
-	numbers, err := GetFloats(os.Args[1])
+	// numbers, err := GetFloats(os.Args[1])
+	numbers, err := GetFloats("sum.txt") //run this file in command prompt
 	if err != nil {
 		log.Fatal(err)
 	}
