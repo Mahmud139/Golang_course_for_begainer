@@ -25,4 +25,11 @@ func main(){
 	fmt.Println(coffepot)
 	fmt.Print(coffepot, "\n")
 	fmt.Printf("%s \n",coffepot)
+/*Many functions in the fmt package check whether the values passed to them satisfy the Stringer interface, and call their String methods if so. This includes the Print, Println, and Printf functions and more.*/
+
+	var value fmt.Stringer = Coffepot("Hasan")
+	fmt.Print(value.String(), "\n")
+	fmt.Printf("%s\n", value)
+	fmt.Println(value)
+	fmt.Println(value.String())
 }
