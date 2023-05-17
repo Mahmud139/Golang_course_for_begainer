@@ -15,8 +15,8 @@ func Socialize() error {
 	defer fmt.Println("Goodbye")
 	fmt.Println("Hello!")
 	return fmt.Errorf("I don't want to talk.")
-	fmt.Println("Nice Weather, eh?")
-	return nil 
+	// fmt.Println("Nice Weather, eh?")
+	// return nil 
 }
 	/*because we include a defer keyword before the
 	fmt.Println("Goodbye!") call, Socialize will always be polite enough to
