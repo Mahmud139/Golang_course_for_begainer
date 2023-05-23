@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() { //this main goroutine is our receiving goroutine
+func main() { //this main function is our receiving goroutine
 	myChannel := make(chan string)
 	go greetings(myChannel)
 	receiveValue := <- myChannel
