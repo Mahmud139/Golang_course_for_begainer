@@ -45,7 +45,7 @@ import (
 // 	want := "apple"
 // 	got := JoinWithCommas(list)
 // 	if got != want {
-// 		t.Errorf(errorString(list, got, want))
+// 		t.Error(errorString(list, got, want))
 // 	}
 // }
 
@@ -54,7 +54,7 @@ import (
 // 	want := "apple and orange"
 // 	got := JoinWithCommas(list)
 // 	if  got != want {
-// 		t.Errorf(errorString(list, got, want))
+// 		t.Error(errorString(list, got, want))
 // 	}
 // }
 
@@ -63,7 +63,7 @@ import (
 // 	want := "apple, orange, and pear"
 // 	got := JoinWithCommas(list)
 // 	if got != want {
-// 		t.Errorf(errorString(list, got, want))
+// 		t.Error(errorString(list, got, want))
 // 	}
 // }
 
