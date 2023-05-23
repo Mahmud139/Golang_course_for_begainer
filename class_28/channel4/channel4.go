@@ -6,10 +6,10 @@ import "fmt"
 func main() {
 	myChannel := make(chan string)
 	go greetings(myChannel)
-	//fmt.Println(<- myChannel)
+	fmt.Println(<- myChannel)
 
-	receiveValue := <- myChannel
-	fmt.Println(receiveValue)
+	// receiveValue := <- myChannel
+	// fmt.Println(receiveValue)
 	//test()
 }
 
