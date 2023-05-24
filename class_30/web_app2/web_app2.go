@@ -12,8 +12,8 @@ func englishHandler(writer http.ResponseWriter, request *http.Request) {
 func banglaHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "kire, web")
 }
-func hindiHandler(writer http.ResponseWriter, request *http.Request) {
-	write(writer, "namaste, web")
+func arabicHandler(writer http.ResponseWriter, request *http.Request) {
+	write(writer, "Assalamo Alaikom, web")
 }
 func write(write http.ResponseWriter, s string) {
 	message := []byte(s)
@@ -26,7 +26,7 @@ func write(write http.ResponseWriter, s string) {
 func main() {
 	http.HandleFunc("/hello",englishHandler)
 	http.HandleFunc("/kire", banglaHandler)
-	http.HandleFunc("/namaste",hindiHandler)
+	http.HandleFunc("/namaste",arabicHandler)
 	err := http.ListenAndServe("localhost:8080", nil)
 	if err != nil {
 		log.Fatal(err)
