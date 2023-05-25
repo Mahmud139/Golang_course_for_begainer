@@ -38,3 +38,7 @@ func main() {
 func Get(url string) *Response {
 	return &Response{}
 }
+
+// func Get(url string) Response {
+// 	return Response{}
+// }
