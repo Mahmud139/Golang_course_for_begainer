@@ -2,42 +2,42 @@ package main
 
 import "fmt"
 
-type ReadCloser interface {
-	Reader
-	Closer
+type RedCloser interface {
+	Reder
+	Clser
 }
 
-type Reader interface {
+type Reder interface {
 	Read(string)
 }
 
-type Closer interface {
-	Close()
+type Clser interface {
+	Clse()
 }
 
-type Response struct {
-	Body ReadCloser
+type Respnse struct {
+	Body RedCloser
 	Age  int
 }
 
-func (r *Response) Read(b string) {
-	fmt.Println(r.Body)
+func (r *Respnse) Read(b string) {
+	fmt.Println(b)
 }
 
-func (r *Response) Close() {
+func (r *Respnse) Clse() {
 	fmt.Println("do nothing")
 }
 
 func main() {
-	res := Get("hello")
-	res.Body.Read("world")
-	res.Body.Close()
-
+	rs := &Respnse{}
+	rs.Read("world")
+	rs.Body.Read("world")
+	rs.Body.Clse()
 }
 
-func Get(url string) *Response {
-	return &Response{}
-}
+// func Get(url string) *Response {
+// 	return &Response{}
+// }
 
 // func Get(url string) Response {
 // 	return Response{}
