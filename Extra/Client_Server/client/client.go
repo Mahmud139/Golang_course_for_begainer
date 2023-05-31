@@ -18,7 +18,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	body := response.Body.(http.bodyEOFSignal)
+	body := response.Body
 	fmt.Printf("Type of readCloser is %T\n", body)
 	fmt.Printf("%#v\n", body)
 

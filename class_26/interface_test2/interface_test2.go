@@ -16,16 +16,16 @@ type Closer interface {
 }
 
 type BodyEOFSignal struct {
-	body ReadCloser
+	reader ReadCloser
 }
 
 func (b *BodyEOFSignal) Read(m string) {
-	b.body.Read("world")
+	b.reader.Read("world")
 	fmt.Println(m)
 }
 
 func (b *BodyEOFSignal) Close() {
-	b.body.Close()
+	b.reader.Close()
 	fmt.Println("nothing")
 }
 
@@ -37,14 +37,18 @@ type Response struct {
 func main() {
 	rs := Get("hello")
 
-	rs.Body.Read("world")
-	rs.Body.Close()
+	body := &BodyEOFSignal{
+		reader: rs.Body,
+	}
+
+	body.Read("world")
+	body.Close()
 }
 
-// func Get(url string) *Response {
-// 	return &Response{}
+func Get(url string) *Response {
+	return &Response{Age: 12, Body: nil}
+}
+
+// func Get(url string) Response {
+// 	return Response{}
 // }
-
-func Get(url string) Response {
-	return Response{}
-}

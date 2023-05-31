@@ -41,7 +41,7 @@ func (b *BodyEOFSignal) IsEOF() bool {
 }
 
 func main() {
-    resp, err := http.Get("https://www.google.com")
+    resp, err := http.Get("https://www.example.com")
     if err != nil {
         fmt.Println(err)
         return
