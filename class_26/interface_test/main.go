@@ -1,44 +1,68 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "io"
+    "net/http"
+)
 
-type RedCloser interface {
-	Reder
-	Clser
+type BodyEOFSignal struct {
+    reader io.ReadCloser
+    isEOF  bool
 }
 
-type Reder interface {
-	Read(string)
+func (b *BodyEOFSignal) Read(p []byte) (n int, err error) {
+    if b.isEOF {
+        return 0, io.EOF
+    }
+
+    n, err = b.reader.Read(p)
+    if err != nil {
+        if err != io.EOF {
+            return n, err
+        }
+
+        b.isEOF = true
+    }
+
+    return n, nil
 }
 
-type Clser interface {
-	Clse()
+func (b *BodyEOFSignal) Close() error {
+    if b.reader != nil {
+        return b.reader.Close()
+    }
+
+    return nil
 }
 
-type Respnse struct {
-	Body RedCloser
-	Age  int
-}
-
-func (r *Respnse) Read(b string) {
-	fmt.Println(b)
-}
-
-func (r *Respnse) Clse() {
-	fmt.Println("do nothing")
+func (b *BodyEOFSignal) IsEOF() bool {
+    return b.isEOF
 }
 
 func main() {
-	rs := &Respnse{}
-	rs.Read("world")
-	rs.Body.Read("world")
-	rs.Body.Clse()
+    resp, err := http.Get("https://www.google.com")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    body := &BodyEOFSignal{
+        reader: resp.Body,
+    }
+
+    for {
+        buf := make([]byte, 1024)
+        n, err := body.Read(buf)
+        if err != nil {
+            if err == io.EOF {
+                fmt.Println("End of body reached")
+                break
+            }
+            fmt.Println(err)
+            return
+        }
+
+        fmt.Println(string(buf[:n]))
+    }
 }
-
-// func Get(url string) *Response {
-// 	return &Response{}
-// }
-
-// func Get(url string) Response {
-// 	return Response{}
-// }

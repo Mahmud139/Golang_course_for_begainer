@@ -1,41 +1,50 @@
 package main
 
-import (
-	"bytes"
-	"fmt"
-	"io"
-	"os"
-)
+import "fmt"
 
-type ClosingBuffer struct {
-	*bytes.Buffer
+type ReadCloser interface {
+	Reader
+	Closer
 }
 
-func (cb *ClosingBuffer) Close() (err error) {
-	//we don't actually have to do anything here, since the buffer is just some data in memory
-	//and the error is initialized to no-error
-	return
+type Reader interface {
+	Read(string)
+}
+
+type Closer interface {
+	Close()
+}
+
+type BodyEOFSignal struct {
+	body ReadCloser
+}
+
+func (b *BodyEOFSignal) Read(m string) {
+	b.body.Read("world")
+	fmt.Println(m)
+}
+
+func (b *BodyEOFSignal) Close() {
+	b.body.Close()
+	fmt.Println("nothing")
+}
+
+type Response struct {
+	Body ReadCloser
+	Age  int
 }
 
 func main() {
-	cb := &ClosingBuffer{bytes.NewBufferString("Hi GoCloudMember!")}
-	var rc io.ReadCloser
-	rc = cb
+	rs := Get("hello")
 
-	buf := new(bytes.Buffer)
+	rs.Body.Read("world")
+	rs.Body.Close()
+}
 
-	numOfByte, err := buf.ReadFrom(rc)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+// func Get(url string) *Response {
+// 	return &Response{}
+// }
 
-	content := buf.String()
-	fmt.Printf("Read: %d bytes, content is: %q\r\n", numOfByte, content)
-
-	fmt.Printf("Type of cb is %T", cb)
-	fmt.Println("")
-	fmt.Printf("Type of rc is %T", rc)
-	fmt.Println("")
-	rc.Close()
+func Get(url string) Response {
+	return Response{}
 }
