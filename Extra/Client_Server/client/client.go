@@ -19,8 +19,8 @@ func main() {
 	}
 
 	body := response.Body
-	fmt.Printf("Type of readCloser is %T", body)
-	fmt.Println("")
+	fmt.Printf("Type of readCloser is %T\n", body)
+	fmt.Printf("%#v\n", body)
 
 	bytes, err := io.ReadAll(response.Body)
 	if err != nil {

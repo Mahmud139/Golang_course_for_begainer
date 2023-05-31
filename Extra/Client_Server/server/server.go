@@ -8,7 +8,8 @@ import (
 
 func main() {
 	http.HandleFunc("/goLinuxCloud", handleReq)
-	err := http.ListenAndServe(":8080", nil)
+	log.Println("Server listening on localhost:8080")
+	err := http.ListenAndServe("localhost:8080", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
