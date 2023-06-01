@@ -47,6 +47,9 @@ func main() {
         return
     }
 
+	// fmt.Printf("%#v\n", resp.Body)
+	// fmt.Printf("%#v\n", resp)
+
     body := &BodyEOFSignal{
         reader: resp.Body,
     }
@@ -64,5 +67,5 @@ func main() {
         }
 
         fmt.Println(string(buf[:n]))
-    }
+    }	
 }
