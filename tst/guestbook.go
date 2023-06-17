@@ -8,6 +8,11 @@ import (
 	"os"
 )
 
+type GuestBook struct {
+	Signatures []string
+	SignaturesCount int
+}
+
 func check(err error) {
 	if err != nil {
 		log.Fatal(err)
@@ -15,9 +20,14 @@ func check(err error) {
 }
 
 func viewHandler(w http.ResponseWriter, r *http.Request) {
+	signatures := getStrings("signatures.txt")
 	html, err := template.ParseFiles("view.html")
 	check(err)
-	err = html.Execute(w, nil)
+	guestBook := GuestBook {
+		Signatures: signatures,
+		SignaturesCount: len(signatures),
+	}
+	err = html.Execute(w, guestBook)
 	check(err)
 }
 
