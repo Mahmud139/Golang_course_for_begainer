@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -31,8 +32,29 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 	check(err)
 }
 
+func newHandler(w http.ResponseWriter, r *http.Request) {
+	html, err := template.ParseFiles("new.html")
+	check(err)
+	err = html.Execute(w, nil)
+	check(err)
+}
+
+func createHandler(w http.ResponseWriter, r *http.Request) {
+	signature := r.FormValue("signature")
+	options := os.O_WRONLY | os.O_APPEND | os.O_CREATE
+	file, err := os.OpenFile("signatures.txt", options, os.FileMode(0600))
+	check(err)
+	_, err = fmt.Fprintln(file, signature)
+	check(err)
+	err = file.Close()
+	check(err)
+	http.Redirect(w, r, "/guestbook", http.StatusFound)
+}
+
 func main() {
 	http.HandleFunc("/guestbook", viewHandler)
+	http.HandleFunc("/guestbook/new", newHandler)
+	http.HandleFunc("/guestbook/create", createHandler)
 	log.Println("Server is listening on localhost:8080...")
 	err := http.ListenAndServe("localhost:8080", nil)
 	check(err)
